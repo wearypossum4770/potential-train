@@ -1,0 +1,90 @@
+:root {
+  --focus-gold: #ffbf47;
+  --usps-digital-blue: #333366;
+  --usps-digital-blue-accent: #3573b1;
+  --redventures-blue-light-accent: #3473b1;
+  --redventures-light-blue-accent: #5c8fc0;
+  --redventures-blue-accent: #eaf1f7;
+  --light-gray-bg: #f7f7f7;
+  --disclaimer-cta-bg: #e5f1fe;
+  --light-gray-hover-bg: #ededed;
+  --text-hover: #999999;
+  --form-field-rules: #999999;
+  --text-grey-limited: #595959;
+  --dark-gray-bg: #d8d8d8;
+  --usps-digital-red: #e71921;
+  --redventures-digital-red: #ab1217;
+  --redventures-digital-red-transparent: #ab121766;
+  --usps-digital-green: #218748;
+  --green-cyan: #04aa6d;
+  --cyan-blue: #f0f4f9;
+  --subaru-light-grey: #ddd;
+  --inverse-text: #fff;
+  --breakpoint-xs: 0;
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+  --border-opacity: 1;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+  margin: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial;
+  font-size: 16px;
+  /* -webkit-font-smoothing: antialiased; */
+  /* -moz-osx-font-smoothing: grayscale; */
+  color: #000;
+}
+
+main {
+  padding: env(safe-area-inset, 20px);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: var(--usps-digital-blue);
+  text-transform: capitalize;
+}
+
+h1 {
+  font-size: 32px;
+}
+
+h2 {
+  font-size: 28px;
+}
+
+h3 {
+  font-size: 22px;
+}
+
+h4 {
+  font-size: 18px;
+}
+
+h5 {
+  font-size: 16px;
+}
+
+h1.inverse--heading,
+h2.inverse--heading {
+  color: #fff;
+  background-color: var(--usps-digital-blue);
+}
+
+h2.hero--variant {
+  font-size: 22px;
+}
+
+input:invalid {
+  border-color: rgb(118, 118, 118), rgb(133, 133, 133);
+}

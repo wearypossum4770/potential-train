@@ -1,0 +1,21 @@
+[
+  "uuid",
+  "visitId",
+  "dcoa",
+  "informedDelivery",
+  "businessName",
+  "startDate",
+  "stopDate",
+  "moverType",
+  "forwardType",
+  "billingAddressType",
+  "complete",
+  "completedDate",
+  "origin",
+  "medUpdated",
+  "sdUpdated",
+  "famPrompt1ShareLastName",
+  "famPrompt2SameLastNameRemaining",
+  "bizPromptEntireMoving",
+  "sdBuffered"
+]

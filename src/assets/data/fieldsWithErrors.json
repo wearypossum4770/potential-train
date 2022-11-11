@@ -1,0 +1,9 @@
+[
+  "informedDelivery",
+  "businessName",
+  "startDate",
+  "stopDate",
+  "moverType",
+  "forwardType",
+  "billingAddressType"
+]

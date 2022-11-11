@@ -1,0 +1,79 @@
+@charset "UTF-8";
+/* @import url(./mathematics.css); */
+/* https://www.cssportal.com/css-optimize/  */
+/* @import url(./utilities/tablet.css) screen and (max-width: 768px); */
+/* @import url(./utilities/mobile.css) screen and (max-width: 480px); */
+/* Shameful CSS */
+@import url(./utilities/shame.css);
+/* BASE LVL STYLES */
+@import url(./elements/default-styles.css);
+/* FORM ELEMENTS STYLES */
+/* @import url(./components/navigation.css);
+@import url(./elements/input/base-input.css);
+@import url(./elements/input/radio-input.css);
+@import url(./elements/input/radio-button.css); */
+/*  COMPONENT STYLES */
+/* @import url(./components/hero-banner.css);
+@import url(./components/calendar.css);
+@import url(./components/accessible-accordion.css);
+@import url(./components/progress-bar.css);
+@import url(./components/choice-order-summary.css);
+@import url(./components/info-panel.css);
+@import url(./components/disclaimer.css);
+@import url(./components/additional-services.css); */
+/* Responsive Breakpoints */
+/* @import url(./utilities/laptop.css);
+@import url(./utilities/desktop.css);
+@import url(./utilities/projector.css); */
+#app-body {
+  margin: 0 2px;
+}
+#app-information {
+  margin: 20px;
+}
+#app {
+  background-color: #fff;
+}
+div#nav {
+  padding: 30px 100px 30px 0;
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: var(--light-gray-bg);
+}
+
+a:link {
+  color: #000;
+}
+
+a:visited {
+  color: #000;
+}
+
+#nav a {
+  font-weight: 700;
+  font-size: 12px;
+  text-decoration: none;
+  margin: 0 10px 0;
+}
+
+#nav a.router-link-exact-active {
+  color: black;
+  font-size: 12px;
+}
+img.app-header-desktop__logo {
+  height: 25.39px;
+  width: 210.75px;
+}
+.app-header-desktop__icon-lock {
+  display: flex;
+  align-items: baseline;
+  font-size: 12px;
+}
+
+.app-header-desktop__icon-lock > img {
+  margin: 0 5px;
+  height: 15px;
+  width: auto;
+}
