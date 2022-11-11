@@ -17,8 +17,7 @@
     "abab": "^2.0.6",
     "pinia": "^2.0.23",
     "vue": "^3.2.41",
-    "vue-router": "^4.1.6",
-    "vuejs-datepicker": "^1.6.2"
+    "vue-router": "^4.1.6"
   },
   "devDependencies": {
     "@pinia/testing": "^0.0.14",
@@ -34,8 +33,7 @@
     "eslint-plugin-n": "^15.0.0",
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-vue": "^9.6.0",
-    "jsdom": "^20.0.1",
-    "posthtml-parser": "^0.11.0",
+    "happy-dom": "^7.6.7",
     "prettier": "^2.7.1",
     "rimraf": "^3.0.2",
     "rollup-plugin-terser": "^7.0.2",
