@@ -1,3 +1,4 @@
+import HomeView from '@/views/home.vue'
 export default [
   {
     name: "disclaimer",
@@ -7,6 +8,6 @@ export default [
   {
     name: "home",
     path: "/home",
-    component: () => import("@/views/home.vue"),
+    component: HomeView,
   },
 ];

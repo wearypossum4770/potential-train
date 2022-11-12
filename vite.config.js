@@ -18,7 +18,6 @@ export default defineConfig({
     sourcemap: true,
     manifest: true,
     ssrManifest: true,
-    // includeSource: ["src/**/*.{js,ts}"],
     rollupOptions: {
       plugins: [subresourceIntegrity()],
     },

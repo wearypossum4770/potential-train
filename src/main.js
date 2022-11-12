@@ -1,10 +1,13 @@
 import { createApp } from "vue";
-import "./style.css";
-import "@/assets/css/main.css";
+import { createPinia } from "pinia";
 import App from "./App.vue";
 import router from "@/router";
-import { createPinia } from "pinia";
+import errorHandler from '@/core/errorHandler'
+
+import "@/assets/css/main.css";
 
 const pinia = createPinia();
 const app = createApp(App);
 app.use(router).use(pinia).mount("#app");
+
+app.config.errorHandler = errorHandler

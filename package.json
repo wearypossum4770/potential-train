@@ -7,6 +7,7 @@
     "_manifest_spec": "https://w3c.github.io/manifest/#dfn-fingerprints",
     "dev": "vite --port 3006",
     "build": "vite build",
+    "serve": "cargo watch -x run &",
     "test": "vitest",
     "pretty": "yarn prettier --write ./",
     "preview": "vite preview --port 3006",

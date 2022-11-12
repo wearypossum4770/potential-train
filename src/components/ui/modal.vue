@@ -2,16 +2,16 @@
   <div v-show="isOpen" class="blocking-modal-mask">
     <div id="blocking-modal-wrapper" class="blocking-modal-wrapper">
       <div
-      role="dialog"
-      aria-labelledby="assessible-description"
-      :aria-modal="isOpen"
-      class="blocking-modal-container"
-    >
-      <span id="assessible-description">{{ description }}</span>
-      <button @click="$emit('close')">X</button>
-      <h2>Default Header</h2>
-      <div></div>
-    </div>
+        role="dialog"
+        aria-labelledby="assessible-description"
+        :aria-modal="isOpen"
+        class="blocking-modal-container"
+      >
+        <span id="assessible-description">{{ description }}</span>
+        <button @click="$emit('close')">X</button>
+        <h2>Default Header</h2>
+        <div></div>
+      </div>
     </div>
   </div>
 </template>

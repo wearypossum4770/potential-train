@@ -1,5 +1,6 @@
-
-#[derive(Debug, Default)]
+use serde::{Deserialize, Serialize};
+use crate::AppState;
+#[derive(Debug, Default, Deserialize, Serialize)]
 pub struct Analytics {  
   pub source: String,
   pub first_name: String,
@@ -10,5 +11,12 @@ pub struct Analytics {
 
 
 impl Analytics {
- 
+ pub fn new() -> Analytics  {
+  Analytics {
+    ..Default::default()
+  }
+ }
+ pub fn create_table(conn: &AppState) {
+  conn.create_table("identity()");
+ }
 }
