@@ -12,6 +12,7 @@ use crate::core::AppState;
 
 use actix_web::{get, web, App, HttpRequest, HttpServer, Responder};
 
+
 #[get("/")]
 async fn index(_req: HttpRequest) -> impl Responder {
     "Hello from the index page."
