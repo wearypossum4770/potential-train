@@ -17,7 +17,7 @@
 </template>
 <script setup>
 const props = defineProps({
-    state: String,
+  state: String,
   options: Array,
   disabled: Boolean,
   fieldName: String,

@@ -9,7 +9,15 @@ import { defineConfig } from "vite";
 import subresourceIntegrity from "./subresource_integrity";
 
 export default defineConfig({
-  plugins: [vue(), strip(), terser({ module: true , compress: { drop_console: true, keep_infinity: true,}, format: {comments: false, ecma: 2023}})],
+  plugins: [
+    vue(),
+    strip(),
+    terser({
+      module: true,
+      compress: { drop_console: true, keep_infinity: true },
+      format: { comments: false, ecma: 2023 },
+    }),
+  ],
   define: {
     "import.meta.vitest": "undefined",
   },
@@ -22,7 +30,7 @@ export default defineConfig({
       plugins: [subresourceIntegrity()],
     },
   },
-  test: { globals: true, environment: "happy-dom",  },
+  test: { globals: true, environment: "happy-dom" },
   sever: { port: 3006, open: true, cors: true },
   resolve: {
     alias: { "@": fileURLToPath(new URL("./src", import.meta.url)) },

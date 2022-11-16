@@ -87,12 +87,11 @@
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
   --border-opacity: 1;
-  
 }
 
 body {
   font-synthesis: none;
-    -webkit-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
   overflow-x: hidden;
   margin: 0;
   font-family: "Helvetica Neue", Helvetica, Arial;

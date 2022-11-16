@@ -3,8 +3,8 @@ import { defineStore } from "pinia";
 const getters = {};
 const actions = {
   async closeModal() {
-    if (!this.canDismiss) return 
-    return this.isOpen = false;
+    if (!this.canDismiss) return;
+    return (this.isOpen = false);
   },
   async incrementStep() {
     this.currentStep += 1;
