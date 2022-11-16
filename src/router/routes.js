@@ -1,4 +1,4 @@
-import HomeView from '@/views/home.vue'
+import HomeView from "@/views/home.vue";
 export default [
   {
     name: "disclaimer",

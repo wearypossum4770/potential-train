@@ -33,7 +33,7 @@ import { onMounted, ref } from "vue";
 import useModal from "@/stores/modal";
 import BlockingModal from "@/components/ui/modal.vue";
 const showModal = ref(false);
-const mailFowardStartDate = ref(0)
+const mailFowardStartDate = ref(0);
 const modal = useModal();
 const recaptchaSiteKey = import.meta.env.VITE_RECAPTCHA_SITE_KEY;
 const recaptcha = `https://www.google.com/recaptcha/api.js?render=${recaptchaSiteKey}`;
