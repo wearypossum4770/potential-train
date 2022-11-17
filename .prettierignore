@@ -3,5 +3,8 @@
 **/dist
 coverage
 .vscode/
+*.svg
+*.lock
+**-lock.json
 # Ignore all HTML files:
 # *.html
