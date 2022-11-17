@@ -1,17 +1,10 @@
-#[macro_use]
-extern crate lazy_static;
-extern crate r2d2;
-extern crate r2d2_sqlite;
-extern crate rusqlite;
-
-mod analytics;
 mod address;
+mod analytics;
 mod core;
 
 use crate::core::AppState;
 
 use actix_web::{get, web, App, HttpRequest, HttpServer, Responder};
-
 
 #[get("/")]
 async fn index(_req: HttpRequest) -> impl Responder {
@@ -26,17 +19,16 @@ async fn hello(path: web::Path<String>) -> impl Responder {
 async fn main() -> std::io::Result<()> {
     let location = "127.0.0.1:8080";
     let database: AppState = AppState::connect();
-    database.create_table("analytics (name varchar(500))"); 
+    database.create_table("analytics (name varchar(500))");
     println!("{}", database.connection.is_autocommit());
     println!("Sqlite3 version: {}", database.sqlite_version);
     println!("Actix Web server started at http://{}/", location);
     HttpServer::new(|| {
         App::new()
-    .service(index)
-    .route("/{name}", web::get().to(hello))
+            .service(index)
+            .route("/{name}", web::get().to(hello))
     })
     .bind(location)?
     .run()
     .await
-
 }
