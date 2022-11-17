@@ -1,6 +1,24 @@
 import * as cheerio from "cheerio";
 import { readFileSync } from "fs";
-export default function htmlHandler({ source }) {
+
+const transformLink = (attrs) => ({
+  ...attrs,
+  title: "English HTML",
+  rel: "preload",
+});
+export default function htmlHandler({
+  source,
+  asAsync = false,
+  asDefer = false,
+  usBlocking = false,
+  crossorigin = "",
+  isModule = false,
+  referrerpolicy = "",
+  href = "",
+  cssPreload = false,
+  title = "",
+  transformLink: fn,
+}) {
   const data = JSON.parse(
     readFileSync("rollup_subresource_cache.json", "utf-8")
   );

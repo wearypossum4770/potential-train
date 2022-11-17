@@ -6,15 +6,13 @@ pipeline {
     }
     stages {
         stage('Build') {
-            when {
-                anyOf{
-                    environment value: 'production'
-                    environment value: 'prod'
-                }
-            }
-            environment {
-                SERVICE_CREDS = credentials('my-predefined-username-password')
-            }
+           // when {
+           //     anyOf{
+         //           environment value: 'production'
+       //             environment value: 'prod'
+     //  }
+            //}
+            // environment {                SERVICE_CREDS = credentials('my-predefined-username-password')            }
             steps {
                 echo 'Building..'
             }
@@ -42,16 +40,16 @@ pipeline {
     }
     post {
         cleanup {
-
+echo 'cleanup'
         }
         always {
-
+echo 'always'
         }
         success {
-
+echo 'success'
         }
         failure {
-            
+ echo 'failure'            
         }
     }
 }
