@@ -1,13 +1,16 @@
-import { defineStore } from "pinia";
 import errorFields from "@/assets/data/fieldsWithErrors.json";
+import { defineStore } from "pinia";
 const initialState = errorFields.reduce((accum, curr) => {
   Object.assign(accum, { [curr]: { hasError: false, message: "" } });
   return accum;
 }, {});
-
-const getters = {};
+// const
+const getters = {
+  errorKeys: {},
+};
 const actions = {};
 const state = () => ({
-  ...initialState,
+  fieldsToValidate: new Set(),
+  errors: { ...initialState },
 });
 export default defineStore("modal", { getters, actions, state });
