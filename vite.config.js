@@ -30,7 +30,11 @@ export default defineConfig({
       plugins: [subresourceIntegrity()],
     },
   },
-  test: { globals: true, environment: "happy-dom" },
+  test: {
+    globals: true,
+    environment: "happy-dom",
+    include: ["**/*.{vitest,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
+  },
   sever: { port: 3006, open: true, cors: true },
   resolve: {
     alias: { "@": fileURLToPath(new URL("./src", import.meta.url)) },
