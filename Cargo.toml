@@ -19,4 +19,3 @@ r2d2_sqlite = "0.20" # 0.21.0 blocked on sqlx sqlite update
 rusqlite = "0.27" # 0.28.0 blocked on sqlx sqlite update
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
-
