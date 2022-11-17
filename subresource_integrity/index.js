@@ -47,7 +47,12 @@ export default function generateIntegrityHash(config = {}) {
           });
         }
         if (filename.endsWith(".html")) {
-          this.emitFile({ ...context, source: htmlHandler(context) });
+          const fileContents = {
+            ...context,
+            source: htmlHandler({ ...config, ...context }),
+          };
+          const { source, type, fileName } = fileContents;
+          this.emitFile({ source, type, fileName });
         }
       }
       writeFileSync("rollup_subresource_cache.json", JSON.stringify(contents));
