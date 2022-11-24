@@ -1,1 +1,3 @@
-import subresourceIntegrity from "./subresource_integrity";
+import subresourceIntegrity from "./scripts/subresource_integrity";
+
+export default subresourceIntegrity
