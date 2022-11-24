@@ -3,6 +3,7 @@ export default [
   {
     name: "disclaimer",
     path: "/",
+    title: "Disclaimer",
     component: () => import("@/views/disclaimer/index.vue"),
   },
   {
