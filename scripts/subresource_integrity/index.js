@@ -1,5 +1,5 @@
 import crypto from "crypto";
-import { writeFileSync } from "fs";
+import { writeFileSync, writeFile } from "fs";
 import { resolve, extname } from 'path'
 import {
   resolveAlgorighm,
@@ -11,8 +11,9 @@ import htmlHandler from "./utils";
 
 const { version } = process;
 const defaultAlgorithm = "SHA-256";
-
+const cacheFilename = resolve('./scripts/rollup_subresource_cache.json');
 export default function generateIntegrityHash(config = {}) {
+  writeFile(cacheFilename, JSON.stringify([]), (err) => err ? err: null)
   const { algorithm, crossorigin, extension=['.css'] } = config;
   const prefix = algorithm
     ? algorithm.replaceAll(/\-/g, "").toLowerCase()
@@ -54,7 +55,9 @@ export default function generateIntegrityHash(config = {}) {
           this.emitFile({ source, type, name, fileName });
         }
       }
-      writeFileSync(resolve('./scripts/rollup_subresource_cache.json'), JSON.stringify(contents));
+      writeFile(cacheFilename, JSON.stringify(contents), (err) => err ? err: null);
     },
   };
 }
+
+writeFile
