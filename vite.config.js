@@ -6,7 +6,7 @@ import { terser } from "rollup-plugin-terser";
 import { fileURLToPath, URL } from "url";
 import { defineConfig } from "vite";
 
-import subresourceIntegrity from "./subresource_integrity";
+import subresourceIntegrity from "./rollup-plugin-subresource-integrity";
 
 export default defineConfig({
   plugins: [
@@ -32,6 +32,8 @@ export default defineConfig({
   },
   test: {
     globals: true,
+    passWithNoTests: true,
+    css: false,
     environment: "happy-dom",
     include: ["**/*.{vitest,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
   },
