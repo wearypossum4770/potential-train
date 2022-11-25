@@ -20,7 +20,6 @@ dist-ssr
 .DS_Store
 coverage
 *.local
-yarn.lock
 /cypress/videos/
 /cypress/screenshots/
 #-----------------------------------------------------------------------
