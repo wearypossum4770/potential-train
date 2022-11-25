@@ -24,10 +24,12 @@ export default function htmlHandler({
   );
   const $ = cheerio.load(source);
   const links = $("link");
-  const scripts = $("script");
+  const scripts = $("script");  
   for (let i = 0; i < scripts.length; i++) {
     const script = scripts[i];
     const { src } = script.attribs;
+    // This will be handling external scripts
+    if (src.startsWith('http')) break;
     const element = data.filter((ctx) => ctx.filename === src.slice(1))[0];
     if (element) {
       const { integrity } = element;
@@ -37,6 +39,8 @@ export default function htmlHandler({
   for (let i = 0; i < links.length; i++) {
     const link = links[i];
     const { href } = link.attribs;
+    // This will be handling external links
+    if (href.startsWith('http')) break;
     const element = data.filter((ctx) => ctx.filename === href.slice(1))[0];
     if (element) {
       const { integrity } = element;

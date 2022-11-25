@@ -1,6 +1,6 @@
 import crypto from "crypto";
 import { writeFileSync } from "fs";
-import { resolve } from 'path'
+import { resolve, extname } from 'path'
 import {
   resolveAlgorighm,
   algorithmWarning,
@@ -13,10 +13,11 @@ const { version } = process;
 const defaultAlgorithm = "SHA-256";
 
 export default function generateIntegrityHash(config = {}) {
-  const { algorithm, crossorigin } = config;
+  const { algorithm, crossorigin, extension=['.css'] } = config;
   const prefix = algorithm
     ? algorithm.replaceAll(/\-/g, "").toLowerCase()
     : "sha256";
+  const selectors = new Set(extension)
   return {
     name: "generate-integirty-hash",
     defaultCrossorigin: "anonymous",
@@ -31,18 +32,18 @@ export default function generateIntegrityHash(config = {}) {
       const assets = Object.keys(assetInfo);
       for (let item in assets) {
         const filename = assets[item];
+        const fileExtension = extname(filename);
         const context = assetInfo[filename];
-        if (filename.endsWith("css")) {
+        if (selectors.has(fileExtension)) {
           const data = context.source ?? context.code;
           const hashBuffer = await crypto.webcrypto.subtle.digest(
             algorithm ?? defaultAlgorithm,
             new Buffer.from(data)
           );
           const hashArray = new Buffer.from(new Uint8Array(hashBuffer));
-          const integrity = `${prefix}-${hashArray.toString("base64")}`;
           contents.push({
             filename,
-            integrity,
+            integrity: `${prefix}-${hashArray.toString("base64")}`,
             version,
             build_date: new Date().toISOString(),
           });
