@@ -19,6 +19,8 @@ export const resolveAlgorighm = (value) =>
       ["SHA-52", "SHA-512"],
     ])
   ).get(value);
+export const crossoriginUnset =
+  "crossorigin value not set, default 'anonymous' will be used.";
 export const algorithmWarning =
   "For increased security valid algorithmic options are one of the following. SHA-1 | SHA-256 | SHA-384 | SHA-512";
 export const crossOriginWarning =
